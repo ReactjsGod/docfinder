@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -16,21 +14,59 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Doctor Booking App
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
+1. `git clone <repo-url>`
+2. `yarn install`
+3. `yarn run dev`
 
-## Learn More
+## Features
+- Browse & filter doctors by specialty & availability
+- Book appointments via modal
+- View booked appointments
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
+- React Nextjs(Vite)
+- Zustand for state
+- TailwindCSS
+- Jest + React Testing Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Additionals
+ - Favicon was created
+ - Nav bar was created
+ - Footer was created
+ - Authentication was implemented
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
+- Keyboard-navigable, ARIA roles, responsive design
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+src/
+├─ app/
+│  ├─ layout.tsx         # RootLayout (Server Component)
+│  ├─ page.tsx           # Landing page
+│  ├─ doctors/page.tsx   # Doctor directory (Client)
+│  ├─ bookings/page.tsx  # My Appointments (Client)
+│
+├─ components/
+│  ├─ Navigation.tsx     # Responsive nav bar
+│  ├─ Footer.tsx
+│  ├─ BookingModal.tsx
+│  ├─ AppointmentList.tsx
+│  └─ auth/
+│     ├─ AuthButtonServer.tsx  # Server: fetch session
+│     └─ AuthButton.tsx        # Client: login/logout buttons
+│
+├─ hooks/
+│  └─ useStore.ts        # Zustand store
+│
+├─ mock/
+│  └─ doctors.ts         # Mock doctor data
+│
+├─ types/
+│  └─ doctors.ts           # Shared TypeScript interfaces
+|  └─ general.ts
+│
+└─ lib/
+   └─ auth/
+      └─ getAuth.ts      # Server actions for signIn/signOut
