@@ -17,20 +17,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 # Doctor Booking App
 
 ## Setup
-1. `git clone <repo-url>`
+1. `git clone https://github.com/ReactjsGod/docfinder.git`
 2. `yarn install`
 3. `yarn run dev`
 
 ## Features
 - Browse & filter doctors by specialty & availability
 - Book appointments via modal
-- View booked appointments
+- View booked appointments (you can only view appointments if the user is logged in)
 
 ## Tech Stack
 - React Nextjs(Vite)
 - Zustand for state
 - TailwindCSS
 - Jest + React Testing Library
+- auth.js for authentication
+- google oauth2
+- react-icons
+- typescript
 
 ## Additionals
  - Favicon was created
